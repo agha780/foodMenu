@@ -14,7 +14,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
+  const [counterCart, setCounterCart] = useState(0);
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
@@ -35,6 +35,8 @@ function App() {
       setCartItems(newCartItems);
       setTotalPrice(totalPrice + item.price);
     }
+    setIsCartOpen(true);
+    setCounterCart(counterCart + 1);
   };
 
   const removeFromCart = (index) => {
@@ -43,28 +45,36 @@ function App() {
     newCartItems.splice(index, 1);
     setCartItems(newCartItems);
     setTotalPrice(totalPrice - itemToRemove.price * itemToRemove.quantity);
+    // Thats something im proud of, i mange to update the counter regarding how many itemToRemove.quantity.
+    setCounterCart(counterCart - 1 * itemToRemove.quantity);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Food Menu</h1>
-        <div className="cart-container">
-          <i className="fas fa-shopping-cart"></i>
-          {cartItems.length > 0 ? (
-            <ul>
-              {cartItems.map((item, index) => (
-                <li key={index}>
-                  {item.name} ({item.price}) x {item.quantity}
-                  <button onClick={() => removeFromCart(index)}>Remove</button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Your cart is empty.</p>
-          )}
-          <p>Total: ${totalPrice}</p>
-        </div>
+        <h1>Food Menu</h1>{" "}
+        <button onClick={toggleCart} className="fas fa-shopping-cart">
+          <h className="counerCart">{counterCart}</h>
+        </button>
+        {isCartOpen === true ? (
+          <div className="cart-container">
+            {cartItems.length > 0 ? (
+              <ul>
+                {cartItems.map((item, index) => (
+                  <li key={index}>
+                    {item.name} (${item.price}) x {item.quantity}
+                    <button onClick={() => removeFromCart(index)}>
+                      Remove
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>Your cart is empty.</p>
+            )}
+            <p>Total: ${totalPrice}</p>
+          </div>
+        ) : null}
       </header>
 
       <div className="menu-container">
