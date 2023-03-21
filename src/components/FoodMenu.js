@@ -4,7 +4,6 @@ import foodItems from "./data";
 function FoodMenu({ addToCart }) {
   return (
     <div>
-      <h2>Food Menu</h2>
       {foodItems.map((foodItem) => (
         <div key={foodItem.id}>
           <h3>{foodItem.name}</h3>
