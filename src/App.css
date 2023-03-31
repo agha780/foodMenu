@@ -138,3 +138,106 @@
 .menu-item button:hover {
   background-color: #388e3c;
 }
+/* here langind page */
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  font-family: "Montserrat", sans-serif;
+}
+
+.landing-page-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.landing-page-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.landing-page-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.landing-page-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.landing-page-buttons button {
+  background-color: #f25656;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.landing-page-buttons button:hover {
+  background-color: #d62e2e;
+}
+
+/* .landingIcon span {
+  padding: 0.5rem 5rem;
+  font-weight: bold;
+}
+.landingIcon {
+  margin-top: 1rem;
+} */
+/* phone landing page  */
+/* Styles for screens smaller than 768px */
+@media only screen and (max-width: 768px) {
+  .landing-page {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .landing-page-image {
+    margin-right: 0;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .landing-page-text {
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  .landing-page-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .landing-page-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .landing-page-buttons button {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
