@@ -1,5 +1,37 @@
 const menuItems = [
   {
+    name: "BUFFALO CHICKEN WINGS",
+    price: 12,
+    category: "appetizers",
+    imageUrl: "appetizers/Buffalo-Chicken-Wings.jpg",
+    description:
+      "Fried chicken wings tossed in spicy Buffalo sauce served with crisp celery sticks & Bleu cheese dip.",
+  },
+  {
+    name: "SIGNATURE SLIDERS",
+    price: 15,
+    category: "appetizers",
+    imageUrl: "appetizers/Fridays-Sig.-Sliders.jpg",
+    description:
+      "Three beef sliders brushed with our signature Tennesse glaze topped with American cheese, frizzled onions & pickles.",
+  },
+  {
+    name: "MOZZARELLA STICKS",
+    price: 14,
+    category: "appetizers",
+    imageUrl: "appetizers/Mozarella-Sticks.jpg",
+    description:
+      " Our signature fried mozzarella sticks are served with marinara sauce & roasted garlic aioli.",
+  },
+  {
+    name: "TENNESSEE CHICKEN BITES",
+    price: 15,
+    category: "appetizers",
+    imageUrl: "appetizers/Tennssee-Chicken-Bites.jpg",
+    description:
+      "Crispy fried chicken bites tossed in your choice of spicy Buffalo or our signature Tennessee sauce. Served with your choice of ranch or Bleu cheese dip.",
+  },
+  {
     name: "PORTOBELLO MUSHROOM VEGGIE BURGER",
     price: 20,
     category: "Burgers",
