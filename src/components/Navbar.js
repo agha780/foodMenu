@@ -32,7 +32,9 @@ function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
-              <h2 className="text-2xl font-bold">Foody</h2>
+              <h2 className="text-2xl font-bold">
+                <span style={{ color: "#f25656" }}>Foody</span>
+              </h2>
             </a>
             <div className="md:hidden">
               <button

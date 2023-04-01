@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./about";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-const menuItems = [
-  { name: "Pizza", price: 10, imageUrl: "pizza.jpg" },
-  { name: "Burger", price: 8, imageUrl: "burger.jpg" },
-  { name: "Fries", price: 5, imageUrl: "fries.jpg" },
-  { name: "Salad", price: 7, imageUrl: "salad.jpg" },
-  { name: "Ice cream", price: 6, imageUrl: "ice_cream.jpg" },
-];
+import menuItems from "./data";
 
 const Menu = () => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [counterCart, setCounterCart] = useState(0);
+  const [category, setCategory] = useState("All");
+
+  // This is how to use filtering to pich which category of food you wanna chose.
+  const filteredItems =
+    category === "All"
+      ? menuItems
+      : menuItems.filter((item) => item.category === category);
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -73,12 +72,11 @@ const Menu = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Routes>
-          <Route path="/about" element={<About></About>}></Route>
-          <Route path="/menu" element={<Menu></Menu>}></Route>
-        </Routes>
-
         <h1>Food Menu</h1>
+        <button onClick={() => setCategory("All")}>All</button>
+        <button onClick={() => setCategory("Pasta")}>Pasta</button>
+        <button onClick={() => setCategory("Burgers")}>Burgers</button>
+        <button onClick={() => setCategory("appetizers")}>Appetizers</button>
         <button onClick={toggleCart} className="cart-icon">
           <i className="fas fa-shopping-cart"></i>
           <span className="cart-counter">{counterCart}</span>
@@ -94,7 +92,7 @@ const Menu = () => {
                 {cartItems.map((item, index) => (
                   <li key={index} className="cart-item">
                     <div className="cart-item-info">
-                      <h3>{item.name}</h3>
+                      <p>{item.name}</p>
                       <p>${item.price}</p>
                       <p>Quantity: {item.quantity}</p>
                     </div>
@@ -114,7 +112,7 @@ const Menu = () => {
       </header>
 
       <div className="menu-container">
-        {menuItems.map((item, index) => (
+        {filteredItems.map((item, index) => (
           <div key={index} className="menu-item">
             <h2>{item.name}</h2>
             <img
@@ -123,6 +121,7 @@ const Menu = () => {
               className="item-image"
             />
             <p className="item-price">${item.price}</p>
+            <span className="description">{item.description}</span>
             <button
               onClick={() => addToCart(item)}
               className="add-to-cart-button"

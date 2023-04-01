@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="landing-page">
@@ -15,8 +15,12 @@ const Home = () => {
           <span style={{ color: "#f25656" }}> your door</span>
         </h1>
         <div className="landing-page-buttons">
-          <button>Order Now!</button>
-          <button>See All Food</button>
+          <Link to="/menu" className="buttonLanding">
+            Order Now!
+          </Link>
+          <Link className="buttonLanding" to="/menu">
+            See All Food
+          </Link>
           {/* <div className="landingIcon">
             <span>No shipping charge</span>
             <span>100% secure checkout</span>
