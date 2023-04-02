@@ -28,7 +28,8 @@ function Navbar() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
+            {/* There was a weird consol error using <a> tag with a herf of javasctip:void(0) so what i did is, i added a # to fix the error. */}
+            <a href="#javascript:void(0)">
               <h2 className="text-2xl font-bold">
                 <span style={{ color: "#f25656" }}>Foody</span>
               </h2>
@@ -78,9 +79,7 @@ function Navbar() {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-gray-600 hover:text-blue-600">
-                <a>{menu}</a>
-              </li>
+              <li className="text-gray-600 hover:text-blue-600">{menu}</li>
             </ul>
           </div>
         </div>
