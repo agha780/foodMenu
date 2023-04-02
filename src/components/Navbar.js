@@ -29,11 +29,11 @@ function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* There was a weird consol error using <a> tag with a herf of javasctip:void(0) so what i did is, i added a # to fix the error. */}
-            <a href="#javascript:void(0)">
+            {/* <a href="#javascript:void(0)">
               <h2 className="text-2xl font-bold">
                 <span style={{ color: "#f25656" }}>Foody</span>
               </h2>
-            </a>
+            </a> */}
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
