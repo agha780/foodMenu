@@ -73,10 +73,22 @@ const Menu = () => {
     <div className="App">
       <header className="App-header">
         <h1>Food Menu</h1>
-        <button onClick={() => setCategory("All")}>All</button>
-        <button onClick={() => setCategory("Pasta")}>Pasta</button>
-        <button onClick={() => setCategory("Burgers")}>Burgers</button>
-        <button onClick={() => setCategory("appetizers")}>Appetizers</button>
+        <button className="filterButton" onClick={() => setCategory("All")}>
+          All
+        </button>
+        <button className="filterButton" onClick={() => setCategory("Pasta")}>
+          Pasta
+        </button>
+        <button className="filterButton" onClick={() => setCategory("Burgers")}>
+          Burgers
+        </button>
+        <button
+          className="filterButton"
+          onClick={() => setCategory("appetizers")}
+        >
+          Appetizers
+        </button>
+
         <button onClick={toggleCart} className="cart-icon">
           <i className="fas fa-shopping-cart"></i>
           <span className="cart-counter">{counterCart}</span>

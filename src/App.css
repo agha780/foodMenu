@@ -15,6 +15,16 @@
   font-weight: bold;
 }
 
+/* When the max is 768, which we target all below px, 
+which are the phone screens,the h1 will be gone, which is the food menu title. 
+It's not necessary when the users use their phone to access the website. */
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 0px;
+  }
+}
+
 .cart-icon {
   display: flex;
   align-items: center;
@@ -33,11 +43,17 @@
   color: #f44336;
 }
 
+/* The overflow-y: auto rule will enable vertical scrolling only if needed.
+this will help us scrooling verticaly inside of the cart to fix the bug */
 .cart-container {
   position: absolute;
   top: 60px;
   right: 0;
   width: 300px;
+  max-height: calc(
+    100vh - 100px
+  ); /* Set a maximum height for the cart container */
+  overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px;
   background-color: white;
   border: 1px solid #ccc;
@@ -209,6 +225,7 @@
 .landingIcon {
   margin-top: 1rem;
 } */
+
 /* phone landing page  */
 /* Styles for screens smaller than 768px */
 @media only screen and (max-width: 768px) {
@@ -245,5 +262,43 @@
     padding: 0.8rem 1.5rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
+  }
+}
+button.filterButton {
+  /* background-color: #f25656; */
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button.filterButton:focus {
+  outline: none;
+}
+/* flex-direction: row; will help to make all the buttons in a row instead of a column.*/
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button.filterButton {
+    margin-right: 2px;
+
+    color: black;
+    border-radius: 50%;
   }
 }
